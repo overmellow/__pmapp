@@ -93,5 +93,22 @@ class DashboardController extends AbstractController
         //     'user' => $user,
         //     'lottery' => $lottery,
         // ]);
-    }       
+    }
+
+    /**
+     * @Route("/dashboard/ticket/{id}", name="ticket")
+     */
+    public function ticket(string $id)
+    {
+        $user = $this->getUser();
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $ticket = $entityManager->getRepository(Ticket::class)->find($id);
+
+        return $this->render('dashboard/ticket.html.twig', [
+            'controller_name' => 'DashboardController',
+            'user' => $user,
+            'ticket' => $ticket,
+        ]);
+    }    
 }

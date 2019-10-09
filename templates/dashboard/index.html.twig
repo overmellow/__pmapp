@@ -47,6 +47,7 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Lottery Number</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -54,8 +55,7 @@
                 <tr>
                     <th scope="row">{{ ticket.id }}</th>
                     <td>{{ ticket.ticketNumber }}</td>
-                    <td></td>
-                    
+
                     <td><a class="btn btn-success" href="/dashboard/ticket/{{ ticket.id }}">Detail</a></td>
                 </tr>
                 {% endfor %}
